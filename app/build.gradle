@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -38,6 +39,9 @@ android {
     }
 }
 
+def retrofitVersion = "2.9.0"
+def moshiVersion = "1.11.0"
+
 dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -51,6 +55,13 @@ dependencies {
 
     // Material
     implementation 'com.google.android.material:material:1.2.1'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
 
     // Testing
     testImplementation 'junit:junit:4.13.1'
