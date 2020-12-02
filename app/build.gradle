@@ -39,24 +39,43 @@ android {
     }
 }
 
-def retrofitVersion = "2.9.0"
-def moshiVersion = "1.11.0"
+def coroutinesAndroidVersion = '1.3.7'
+
+def androidXCoreKtxVersion = '1.3.2'
+def androidXAppCompatVersion = '1.2.0'
+def androidXConstraintLayoutVersion = '2.0.4'
+def androidXLifecycleVersion = '2.2.0'
+def androidXArchCoreTestingVersion = '2.1.0'
+
+def materialComponentsVersion = '1.2.1'
+
+def retrofitVersion = '2.9.0'
+def moshiVersion = '1.11.0'
+
+def junitVersion = '4.13.1'
+def junitExtVersion = '1.1.2'
+def espressoVersion = '3.3.0'
 
 dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesAndroidVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroidVersion"
+
     // Android
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation "androidx.core:core-ktx:$androidXCoreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$androidXAppCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayoutVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$androidXLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXLifecycleVersion"
 
     // Material
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation "com.google.android.material:material:$materialComponentsVersion"
 
     // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
 
     // Moshi
@@ -64,7 +83,15 @@ dependencies {
     kapt("com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion")
 
     // Testing
-    testImplementation 'junit:junit:4.13.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$junitExtVersion"
+
+    // Testing mocks
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+    // Testing architecture components
+    testImplementation "androidx.arch.core:core-testing:$androidXArchCoreTestingVersion"
+
+    // Testing coroutines
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesAndroidVersion"
 }
