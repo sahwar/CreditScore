@@ -1,4 +1,4 @@
-package com.dvdb.creditscore.domain.model.usecase.base
+package com.dvdb.creditscore.domain.usecase.base
 
 interface UseCase<out T> {
     suspend fun execute(): T

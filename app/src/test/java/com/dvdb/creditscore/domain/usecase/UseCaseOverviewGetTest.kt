@@ -1,4 +1,4 @@
-package com.dvdb.creditscore.domain.model.usecase
+package com.dvdb.creditscore.domain.usecase
 
 import com.dvdb.creditscore.api.model.DTOOverviewCreditReportInfo
 import com.dvdb.creditscore.api.model.response.DTOResponseOverview
