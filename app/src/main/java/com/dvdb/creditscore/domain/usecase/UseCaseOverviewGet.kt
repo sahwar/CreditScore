@@ -7,11 +7,17 @@ import com.dvdb.creditscore.domain.usecase.base.UseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class UseCaseOverviewGet(
+class UseCaseOverviewGet private constructor(
     private val repository: RepositoryOverview
 ) : UseCase<EntityResponseOverview> {
 
     override suspend fun execute(): EntityResponseOverview = withContext(Dispatchers.IO) {
         repository.getOverview().transform()
+    }
+
+    class Factory(
+        private val repository: RepositoryOverview
+    ) {
+        fun create(): UseCaseOverviewGet = UseCaseOverviewGet(repository)
     }
 }
