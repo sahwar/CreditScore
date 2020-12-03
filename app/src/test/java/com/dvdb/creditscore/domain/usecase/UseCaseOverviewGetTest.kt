@@ -25,7 +25,7 @@ class UseCaseOverviewGetTest {
             )
         )
 
-        val actualEntityResponseOverview = UseCaseOverviewGet(
+        val useCase = UseCaseOverviewGet.Factory(
             FakeOverviewRepository(
                 DTOResponseOverview(
                     creditReportInfo = DTOOverviewCreditReportInfo(
@@ -36,7 +36,8 @@ class UseCaseOverviewGetTest {
                     )
                 )
             )
-        ).execute()
+        ).create()
+        val actualEntityResponseOverview = useCase.execute()
 
         Assert.assertEquals(expectedEntityResponseOverview, actualEntityResponseOverview)
     }
