@@ -42,4 +42,13 @@ class HelperResourceResolverImplTest {
 
         Assert.assertEquals(expectedDimension, actualDimension)
     }
+
+    @Test
+    fun getResourceIdFromAttribute_nullContext_returnNull() {
+        val expectedResourceId = null
+
+        val actualResourceId = helperResourceResolver.getResourceIdFromAttribute(0)
+
+        Assert.assertEquals(expectedResourceId, actualResourceId)
+    }
 }
