@@ -1,7 +1,9 @@
 package com.dvdb.creditscore.domain.helper
 
+import android.text.style.TextAppearanceSpan
 import com.dvdb.creditscore.api.model.response.DTOResponseOverview
 import com.dvdb.creditscore.api.repository.RepositoryOverview
+import com.dvdb.creditscore.presentation.util.FactoryTextSpan
 import com.dvdb.creditscore.presentation.util.HelperResourceResolver
 
 class FakeOverviewRepository(
@@ -27,4 +29,12 @@ class FakeHelperResourceResolver(
     override fun getDimensionPixelSize(dimenRes: Int): Int? = getDimensionPixelSize
 
     override fun getResourceIdFromAttribute(attrRes: Int): Int? = getResourceIdFromAttribute
+}
+
+class FakeFactoryTextSpan(
+    private val createTextAppearanceSpan: TextAppearanceSpan? = null
+) : FactoryTextSpan {
+
+    override fun createTextAppearanceSpan(appearanceId: Int): TextAppearanceSpan? =
+        createTextAppearanceSpan
 }
