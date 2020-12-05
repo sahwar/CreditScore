@@ -38,6 +38,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 def coroutinesAndroidVersion = '1.3.7'

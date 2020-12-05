@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CreditScore</string>
+
+    <string name="error_retry_title">Something went wrong</string>
+    <string name="error_retry_description">We\'re sorry, something went wrong.\nPlease try again or restart the app.</string>
+    <string name="error_retry_action">Try again</string>
 </resources>
