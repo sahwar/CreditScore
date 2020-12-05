@@ -8,7 +8,7 @@ import com.dvdb.creditscore.presentation.util.HelperResourceResolver
 import java.lang.ref.WeakReference
 
 class HelperResourceResolverImpl(
-    context: Context?
+    context: Context
 ) : HelperResourceResolver {
     private val contextRef: WeakReference<Context> = WeakReference(context)
 
