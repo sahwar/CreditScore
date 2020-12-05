@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.ColorInt
 import com.dvdb.creditscore.R
-import com.dvdb.creditscore.presentation.util.extension.getColorFromAttr
+import com.dvdb.creditscore.presentation.util.extension.resolveAttribute
 import com.dvdb.creditscore.presentation.util.impl.HelperResourceResolverImpl
 import com.dvdb.creditscore.presentation.widget.circle.helper.HelperProgressCircleDimensions
 
@@ -25,7 +25,7 @@ class ViewCircleProgressWidget : View {
     )
 
     private val backgroundPaint = Paint().apply {
-        color = context.getColorFromAttr(R.attr.colorOnBackground)
+        color = context.resolveAttribute(R.attr.colorOnBackground)
         style = Paint.Style.STROKE
         strokeWidth = helperDimensions.backgroundWidth
         isAntiAlias = true

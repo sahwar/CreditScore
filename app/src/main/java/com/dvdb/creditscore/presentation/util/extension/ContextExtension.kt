@@ -3,14 +3,12 @@ package com.dvdb.creditscore.presentation.util.extension
 import android.content.Context
 import android.util.TypedValue
 import androidx.annotation.AttrRes
-import androidx.annotation.ColorInt
 
-@ColorInt
-fun Context.getColorFromAttr(
-    @AttrRes attrColor: Int,
+fun Context.resolveAttribute(
+    @AttrRes attr: Int,
     typedValue: TypedValue = TypedValue(),
     resolveRefs: Boolean = true
 ): Int {
-    theme.resolveAttribute(attrColor, typedValue, resolveRefs)
+    theme.resolveAttribute(attr, typedValue, resolveRefs)
     return typedValue.data
 }
