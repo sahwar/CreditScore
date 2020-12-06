@@ -1,7 +1,9 @@
 package com.dvdb.creditscore.domain.di
 
 import com.dvdb.creditscore.api.repository.RepositoryOverview
-import com.dvdb.creditscore.domain.usecase.UseCaseOverviewGet
+import com.dvdb.creditscore.domain.model.response.EntityResponseOverview
+import com.dvdb.creditscore.domain.usecase.UseCaseFactory
+import com.dvdb.creditscore.domain.usecase.impl.UseCaseOverviewGet
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +16,7 @@ class DomainModule {
 
     @Singleton
     @Provides
-    fun provideUseCaseOverviewGetFactory(overviewRepository: RepositoryOverview): UseCaseOverviewGet.Factory {
+    fun provideUseCaseOverviewGetFactory(overviewRepository: RepositoryOverview): UseCaseFactory<EntityResponseOverview> {
         return UseCaseOverviewGet.Factory(overviewRepository)
     }
 }

@@ -6,6 +6,7 @@ import com.dvdb.creditscore.domain.helper.FakeOverviewRepository
 import com.dvdb.creditscore.domain.model.EntityOverview
 import com.dvdb.creditscore.domain.model.EntityOverviewScoreBandType
 import com.dvdb.creditscore.domain.model.response.EntityResponseOverview
+import com.dvdb.creditscore.domain.usecase.impl.UseCaseOverviewGet
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test

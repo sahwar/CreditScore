@@ -1,15 +1,15 @@
-package com.dvdb.creditscore.domain.usecase.base
+package com.dvdb.creditscore.domain.usecase.impl.base
 
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
-class UseCaseTest {
+class UseCaseBaseTest {
 
     @Test
     fun execute_doWorkInvoked() = runBlocking {
         var hasPerformedWork = false
 
-        object : UseCase<Unit>() {
+        object : UseCaseBase<Unit>() {
             override suspend fun doWork() {
                 hasPerformedWork = true
             }
