@@ -8,14 +8,12 @@ import com.dvdb.creditscore.domain.model.response.EntityResponseOverview
 import com.dvdb.creditscore.presentation.overview.model.UIModelOverview
 import com.dvdb.creditscore.presentation.overview.model.transformer.transform
 import com.dvdb.creditscore.presentation.util.model.UIModelDataState
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
 
-@ExperimentalCoroutinesApi
 class ViewModelOverviewTest {
 
     @get:Rule
