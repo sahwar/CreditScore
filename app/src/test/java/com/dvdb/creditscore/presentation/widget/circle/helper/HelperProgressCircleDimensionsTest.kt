@@ -1,6 +1,6 @@
 package com.dvdb.creditscore.presentation.widget.circle.helper
 
-import com.dvdb.creditscore.domain.helper.FakeHelperResourceResolver
+import com.dvdb.creditscore.FakeHelperResourceResolver
 import org.junit.Assert
 import org.junit.Test
 

@@ -1,8 +1,10 @@
-package com.dvdb.creditscore.domain.helper
+package com.dvdb.creditscore
 
 import android.text.style.TextAppearanceSpan
 import com.dvdb.creditscore.api.model.response.DTOResponseOverview
 import com.dvdb.creditscore.api.repository.RepositoryOverview
+import com.dvdb.creditscore.domain.usecase.UseCase
+import com.dvdb.creditscore.domain.usecase.UseCaseFactory
 import com.dvdb.creditscore.presentation.util.FactoryTextSpan
 import com.dvdb.creditscore.presentation.util.HelperResourceResolver
 
@@ -37,4 +39,14 @@ class FakeFactoryTextSpan(
 
     override fun createTextAppearanceSpan(appearanceId: Int): TextAppearanceSpan? =
         createTextAppearanceSpan
+}
+
+class FakeUseCaseFactory<out T>(
+    private val useCaseExecuteBlock: suspend () -> T
+) : UseCaseFactory<T> {
+
+    override fun create(): UseCase<T> = object : UseCase<T> {
+
+        override suspend fun execute(): T = useCaseExecuteBlock()
+    }
 }

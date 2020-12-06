@@ -1,8 +1,8 @@
 package com.dvdb.creditscore.domain.usecase
 
+import com.dvdb.creditscore.FakeOverviewRepository
 import com.dvdb.creditscore.api.model.DTOOverviewCreditReportInfo
 import com.dvdb.creditscore.api.model.response.DTOResponseOverview
-import com.dvdb.creditscore.domain.helper.FakeOverviewRepository
 import com.dvdb.creditscore.domain.model.EntityOverview
 import com.dvdb.creditscore.domain.model.EntityOverviewScoreBandType
 import com.dvdb.creditscore.domain.model.response.EntityResponseOverview

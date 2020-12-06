@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.dvdb.creditscore.presentation.widget.circle.ViewCircleProgressWidget
+        android:id="@+id/score_circle_progress"
+        android:layout_width="@dimen/dimen_220"
+        android:layout_height="@dimen/dimen_220"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <TextView
+        android:id="@+id/score_summary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/score_circle_progress"
+        app:layout_constraintEnd_toEndOf="@id/score_circle_progress"
+        app:layout_constraintStart_toStartOf="@id/score_circle_progress"
+        app:layout_constraintTop_toTopOf="@id/score_circle_progress"
+        tools:alpha="1.0"
+        tools:text="Your credit score is\n327\nout of 700" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/scoreGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="score_circle_progress,@+id/score_summary" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <com.dvdb.creditscore.presentation.widget.error.ViewErrorRetryWidget
+        android:id="@+id/errorRetry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
